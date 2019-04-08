@@ -1,0 +1,254 @@
+/* ==============================================
+
+Template: 404 Meteor
+Version: 1.0
+Author:	NarCav
+
+ - General setting
+ - Button
+ - Section wrapper
+ - Planets and stars background
+ - Meteors
+ - Meteor orbit
+ - Meteor images
+ - Meteor animation setting
+ - Info
+ - Loader
+ - Loader animation setting
+
+================================================ */
+
+/* ------------------
+    General setting
+-------------------- */
+body {
+  font-family: "Roboto", sans-serif !important;
+  margin: 0px;
+  padding: 0px;
+  font-weight: 500;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb:window-inactive {
+  background: #ac2387;
+}
+
+img {
+  width: 100%;
+}
+
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* ------------------
+    Button
+-------------------- */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  min-width: 155px;
+  padding: 16px 0px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  background: #ac2387;
+  color: white;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  letter-spacing: 0.75px;
+  font-size: 18px;
+  font-weight: 400;
+  transition: .2s ease-in-out;
+}
+
+.btn:hover{
+  background: #9b207a;
+}
+
+/* ------------------
+    Section wrapper
+-------------------- */
+.not-found-sc {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: -webkit-gradient(linear, left bottom, left top, from(#02041a), to(#ac2387));
+  background: -webkit-linear-gradient(bottom, #02041a 0%, #ac2387 100%);
+  background: -o-linear-gradient(bottom, #02041a 0%, #ac2387 100%);
+  background: linear-gradient(0deg, #02041a 0%, #ac2387 100%);
+}
+
+/* ------------------
+    Planets and stars background
+-------------------- */
+.not-found-sc .planet-stars {
+  position: relative;
+  z-index: 1;
+}
+.not-found-sc .planet-stars .img-outer {
+  position: fixed;
+  top: -50px;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* ------------------
+    Meteors
+-------------------- */
+.not-found-sc .meteors {
+  width: 100vw;
+  position: fixed;
+  right: -100px;
+  bottom: 0px;
+  z-index: 2;
+  -webkit-transform: rotate(159deg);
+  -ms-transform: rotate(159deg);
+  transform: rotate(159deg);
+}
+
+/* ------------------
+    Meteor orbit
+-------------------- */
+.not-found-sc .meteors .orbit {
+  margin: 50px 0px;
+}
+
+/* ------------------
+    Meteor images
+-------------------- */
+.not-found-sc .meteors .orbit .img-outer {
+  -webkit-transform: rotate(200deg);
+  -ms-transform: rotate(200deg);
+  transform: rotate(200deg);
+}
+.not-found-sc .meteors .orbit:nth-child(1) .img-outer {
+  width: 66px;
+  -webkit-animation: meteorAction 3s linear infinite;
+  animation: meteorAction 3s linear infinite;
+}
+.not-found-sc .meteors .orbit:nth-child(2) .img-outer {
+  width: 212px;
+  -webkit-animation: meteorAction 2.5s linear infinite;
+  animation: meteorAction 2.5s linear infinite;
+}
+.not-found-sc .meteors .orbit:nth-child(3) .img-outer {
+  width: 132px;
+  -webkit-animation: meteorAction 2s linear infinite;
+  animation: meteorAction 2s linear infinite;
+}
+.not-found-sc .meteors .orbit:nth-child(4) .img-outer {
+  width: 66px;
+  -webkit-animation: meteorAction 4s linear infinite;
+  animation: meteorAction 4s linear infinite;
+}
+.not-found-sc .meteors .orbit:nth-child(5) .img-outer {
+  width: 66px;
+  -webkit-animation: meteorAction 5s linear infinite;
+  animation: meteorAction 5s linear infinite;
+}
+.not-found-sc .meteors .orbit:nth-child(6) .img-outer {
+  width: 115px;
+  -webkit-animation: meteorAction 3s linear infinite;
+  animation: meteorAction 3s linear infinite;
+}
+.not-found-sc .meteors .orbit:nth-child(7) .img-outer {
+  width: 93px;
+  -webkit-animation: meteorAction 4s linear infinite;
+  animation: meteorAction 4s linear infinite;
+}
+
+/* ------------------
+    Meteor animation setting
+-------------------- */
+@-webkit-keyframes meteorAction {
+  0% {
+    margin-left: -212px;
+  }
+  100% {
+    margin-left: calc(100vw + 212px);
+  }
+}
+
+/* ------------------
+    Info
+--------------------*/
+.info{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 11;
+  text-align: center;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.info h2{
+  margin: 0px;
+  font-size: 50px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.info h1{
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 300px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.info p{
+  font-size: 20px;
+  color: #ffffff;
+}
+
+/* ------------------
+    Loader
+-------------------- */
+.loader-bk {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #0e1b2b;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* ------------------
+    Loader animation setting
+-------------------- */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
